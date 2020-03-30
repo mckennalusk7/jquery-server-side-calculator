@@ -12,41 +12,37 @@ app.use(express.static("server/public"));
 
 // sending numbers and getting results //
 app.post("/numbers", (req, res) => {
-    res.send(numbers);
-});
-const numbers = {
-    num1=parseFloat(numbers.num1),
-    num2= parseFloat(numbers.num2),
-    operator= numbers.operator,
-};
+  res.send(numbers);
 
+  const num1 = parseFloat(numbers.num1);
+  const num2 = parseFloat(numbers.num2);
+  const operator = numbers.operator;
+
+  if (operator == "+") {
+    numbers.total = num1 + num2;
+  } else if (operator == "-") {
+    numbers.total = num1 - num2;
+  } else if (operator == "*") {
+    numbers.total = num1 * num2;
+  } else if (operator == "/") {
+    numbers.total = num1 / num2;
+  }
+});
 
 result = {
-    result: calcEquals(num1, operator, num2)};
-console.log('complete!');
+  result: calcEquals(num1, operator, num2)
+};
 
 app.get("/result", (req, res) => {
-    res.send(result);
-});
-
-let calculationHistory ={};
-calculationHistory = {
-    num1,
-    num2,
-    operator,
-};
-history.push(calculationHistory);
-
-app.get("/history", (req, res) => {
-    res.send(history);
+  res.send(result);
 });
 
 app.delete("/delete", (req, res) => {
-    history.length = 0;
-    console.log(history);
+  history.length = 0;
+  console.log(history);
 });
 
 // Listening for server //
 app.listen(PORT, () => {
-    console.log(`server running on port ${PORT}`);
+  console.log(`server running on port ${PORT}`);
 });

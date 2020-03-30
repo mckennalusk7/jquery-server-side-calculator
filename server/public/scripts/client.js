@@ -14,6 +14,7 @@ function init() {
   $(".js-subtract-btn").on("click", calcSubtract);
   $(".js-multiply-btn").on("click", calcMultiply);
   $(".js-divide-btn").on("click", calcDivide);
+
   {
     console.log("calculation");
   }
