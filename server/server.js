@@ -10,8 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("server/public"));
 
+// sending numbers and getting results //
 app.post("/numbers", (req, res) => {
-  res.send(numbers);
+    res.send(numbers);
 });
 const numbers = {
     num1=parseFloat(numbers.num1),
@@ -20,20 +21,32 @@ const numbers = {
 };
 
 
+result = {
+    result: calcEquals(num1, operator, num2)};
+console.log('complete!');
+
 app.get("/result", (req, res) => {
-  res.send(result);
+    res.send(result);
 });
 
+let historyOperator ={};
+historyOperator = {
+    num1,
+    num2,
+    operator,
+};
+history.push(historyOperator);
+
 app.get("/history", (req, res) => {
-  res.send(history);
+    res.send(history);
 });
 
 app.delete("/delete", (req, res) => {
-  history.length = 0;
-  console.log(history);
+    history.length = 0;
+    console.log(history);
 });
 
 // Listening for server //
-app.listen(5000, () => {
-  console.log("server running on port");
+app.listen(PORT, () => {
+    console.log(`server running on port ${PORT}`);
 });
