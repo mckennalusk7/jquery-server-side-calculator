@@ -1,13 +1,9 @@
-let operator;
-let history;
-
 $(document).ready(init);
 
-function init() {
-  console.log("LETS GO");
+let operation = "";
 
+function init() {
   calculationHistory();
-  $(".js-operator-btn").on("click", () => event);
   $(".js-clear-btn").on("click", calcClear);
   $(".js-calculation-btn").on("submit", calcEquals);
   $(".js-add-btn").on("click", calcAddition);
@@ -15,24 +11,35 @@ function init() {
   $(".js-multiply-btn").on("click", calcMultiply);
   $(".js-divide-btn").on("click", calcDivide);
 
-  {
-    console.log("calculation");
-  }
+  getEquations();
 }
-console.log;
 
-function clearCalculations() {
-  console.log("cleared on click");
+function calcAddition() {
+  operation = "add";
+}
 
-  $(".js-input-firstNumb").val("");
-  $(".js-input-secondNumb").val("");
+function calcSubtract() {
+  operation = "sub";
+}
+
+function calcMultiply() {
+  operation = "multiply";
+}
+
+function calcDivide() {
+  operation = "divide";
 }
 
 function calcEquals() {
-  console.log("submitted on click");
+  const serverData = {
+    num1: $(".js-input-firstNumb").val(""),
+    num2: $(".js-input-secondNumb").val(""),
+    operation: operation
+  };
 }
 
-const newCalculation = {
-  num1: $(".js-input-firstNumb").val(),
-  num2: $(".js-input-secondNumb").val()
-};
+function calcClear() {
+  $(".js-input-firstNumb").val("");
+  $(".js-input-secondNumb").val("");
+  operation = "";
+}
