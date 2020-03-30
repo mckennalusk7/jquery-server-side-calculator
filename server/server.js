@@ -29,13 +29,13 @@ app.get("/result", (req, res) => {
     res.send(result);
 });
 
-let historyOperator ={};
-historyOperator = {
+let calculationHistory ={};
+calculationHistory = {
     num1,
     num2,
     operator,
 };
-history.push(historyOperator);
+history.push(calculationHistory);
 
 app.get("/history", (req, res) => {
     res.send(history);

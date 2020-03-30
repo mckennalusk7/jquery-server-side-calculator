@@ -4,11 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Server Side Calculator</title>
 </head>
 
 <body>
-    <h1> SERVER-SIDE CALCULATOR</h1>
+    <header>
+        <h1> Server Side Calculator</h1>
+    </header>
+    <div>
+        <input class="js-input-firstNumb" type="number" placeholder="number" name="Insert Number" require />
+
+        <button class=".js-operator-btn">+</button>
+        <button class=".js-operator-btn">-</button>
+        <button class=".js-operator-btn">*</button>
+        <button class=".js-operator-btn">/</button>
+
+        <input class="js-input-secondNumb" type="number" placeholder="number" name="Insert Number" require />
+    </div>
+    <div>
+        <h2 class="js-calculationResult">0</h2>
+    </div>
+    <div>
+        <p class="js-calculationsListed"></p>
+    </div>
 </body>
 
 </html>
