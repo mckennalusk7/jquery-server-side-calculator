@@ -10,12 +10,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("server/public"));
 
+//  getting numbers //
+app.get("/math", (req, res) => {
+  res.send(history);
+});
+
 // sending numbers and getting results //
 app.post("/numbers", (req, res) => {
   res.send(numbers);
 
-  const num1 = parseFloat(numbers.num1);
-  const num2 = parseFloat(numbers.num2);
+  //  changed parseFloat to parseInt
+  const num1 = parseInt(numbers.num1);
+  const num2 = parseInt(numbers.num2);
   const operator = numbers.operator;
 
   if (operator == "+") {
