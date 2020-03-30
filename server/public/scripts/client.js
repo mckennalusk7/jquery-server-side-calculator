@@ -46,13 +46,35 @@ function calcClear() {
 
 function postEquation(dataForServer) {
   $.ajax({
-    type: "GET",
+    type: "POST",
     url: "/numbers"
   })
     .then(response => {
       console.log(response);
+      getEquations();
     })
     .catch(err => {
       console.warn(err);
     });
+
+  function getEquation(dataForServer) {
+    $.ajax({
+      type: "GET",
+      url: "/numbers"
+    })
+      .then(response => {
+        console.log(response);
+        render(response);
+      })
+      .catch(err => {
+        console.warn(err);
+      });
+  }
+
+  function render() {
+    $("js-calculationResult").empty();
+    $("js-calculationResult").append(`
+        
+    `);
+  }
 }
