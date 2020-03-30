@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static("server/public"));
 
 //  getting numbers //
-app.get("/math", (req, res) => {
+app.get("/numbers", (req, res) => {
   res.send(history);
 });
 
@@ -20,32 +20,26 @@ app.post("/numbers", (req, res) => {
   res.send(numbers);
 
   //  changed parseFloat to parseInt
-  const num1 = parseInt(numbers.num1);
-  const num2 = parseInt(numbers.num2);
-  const operator = numbers.operator;
+  const equation ={
+    num1 = parseInt(req.body.num1),
+    num2 = parseInt(req.body.num2),
+    operation: req.body.operation,
+  };
 
-  if (operator == "+") {
-    numbers.total = num1 + num2;
-  } else if (operator == "-") {
-    numbers.total = num1 - num2;
-  } else if (operator == "*") {
-    numbers.total = num1 * num2;
-  } else if (operator == "/") {
-    numbers.total = num1 / num2;
+  if (equation.operation === "+") {
+    numbers.total = equation.num1 + equation.num2;
+  } else if (equation.operation === "-") {
+    numbers.total = equation.num1 - equation.num2;
+  } else if (equation.operation === "*") {
+    numbers.total = equation.num1 * equation.num2;
+  } else if (equation.operation === "/") {
+    numbers.total = equation.num1 / equation.num2;
   }
-});
 
-result = {
-  result: calcEquals(num1, operator, num2)
-};
 
-app.get("/result", (req, res) => {
-  res.send(result);
-});
+history.push(equation);
 
-app.delete("/delete", (req, res) => {
-  history.length = 0;
-  console.log(history);
+res.send(200);
 });
 
 // Listening for server //
