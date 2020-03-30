@@ -3,7 +3,6 @@ $(document).ready(init);
 let operation = "";
 
 function init() {
-  calculationHistory();
   $(".js-clear-btn").on("click", calcClear);
   $(".js-calculation-btn").on("submit", calcEquals);
   $(".js-add-btn").on("click", calcAddition);
@@ -11,7 +10,7 @@ function init() {
   $(".js-multiply-btn").on("click", calcMultiply);
   $(".js-divide-btn").on("click", calcDivide);
 
-  getEquations();
+  // getEquations();
 }
 
 function calcAddition() {
