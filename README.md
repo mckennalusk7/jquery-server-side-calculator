@@ -2,7 +2,8 @@
 
 ## Description
 
-Duration: 2 Week Sprint
+Duration: Weekend Challenge
+
 I will be building a server-side calculator. Creating this user interface will allow the user to input values and select the type of math operation that they would like to use. This server will be able to handle, Addition, Subtraction, Multiplication, and division.
 When the (= button) submit button is clicked, I will be sending this object to a server via POST. There will also be a "C" button that will clear these input fields that the user created. By doing so, I will be doing a GET request to get the calculations.
 
