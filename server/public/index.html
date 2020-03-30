@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Side Calculator</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="vendors/jquery.js"></script>
+    <script src="scripts/client.js"></script>
+
 </head>
 
 <body>
@@ -14,19 +19,19 @@
     <div>
         <input class="js-input-firstNumb" type="number" placeholder="number" name="Insert Number" require />
 
-        <button class=".js-operator-btn">+</button>
-        <button class=".js-operator-btn">-</button>
-        <button class=".js-operator-btn">*</button>
-        <button class=".js-operator-btn">/</button>
+        <button class=".js-add-btn">+</button>
+        <button class=".js-subtract-btn">-</button>
+        <button class=".js-multiply-btn">*</button>
+        <button class=".js-divide-btn">/</button>
 
         <input class="js-input-secondNumb" type="number" placeholder="number" name="Insert Number" require />
-        <button class=".js-calculation-btn">=</button>
+        <button class=".js-equals-btn">=</button>
         <button class=".js-clear-btn">Clear</button>
 
 
     </div>
     <div>
-        <h2 class="js-calculationResult">0</h2>
+        <h2 class="js-calculationResult"></h2>
     </div>
     <div>
         <p class="js-calculationsListed"></p>
