@@ -1,0 +1,22 @@
+{
+  "name": "jquery-server-side-calculator-master",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mckennalusk7/jquery-server-side-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mckennalusk7/jquery-server-side-calculator/issues"
+  },
+  "homepage": "https://github.com/mckennalusk7/jquery-server-side-calculator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
